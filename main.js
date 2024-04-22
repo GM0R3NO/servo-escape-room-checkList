@@ -16,12 +16,12 @@ const tituloDaSalaAtual = document.querySelector('.titulo_atual')
 
 selecionarSala.addEventListener('click', () => {
     ulSalas.classList.toggle('salas')
-    if(selecionarSala.textContent == "Selecione a sala⭣"){
-        selecionarSala.textContent = "Salas⭣ "
+    if(selecionarSala.textContent == "Selecione a sala"){
+        selecionarSala.textContent = "Salas "
         tituloSala.classList.remove('activee')
         return
     }
-    selecionarSala.textContent = "Selecione a sala⭣"
+    selecionarSala.textContent = "Selecione a sala"
     tituloSala.classList.add('activee')
 })
 
@@ -39,6 +39,8 @@ function mostrarSalas(nomeDaSala, titulo, butaoDaTarefa, primeiraTarefa, segunda
     nomeDaSala.addEventListener('click', () => {
         tituloDaSalaAtual.innerHTML = `${titulo}`
         ulSalas.classList.add('salas')
+        selecionarSala.textContent = "Salas"
+        tituloSala.classList.remove('activee')
         retirarBorda()
         butaoDaTarefa.classList.add('active')
         ulTerminadas.innerHTML = ""
